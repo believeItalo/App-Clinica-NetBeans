@@ -1,13 +1,17 @@
 
 package br.senai.sp.jandira.ui;
 
+import br.senai.sp.jandira.dao.PlanoDeSaudeDAO;
+import javax.swing.JTable;
+
 
 public class HomeFrame extends javax.swing.JFrame {
 
    
     public HomeFrame() {
-        System.out.println("criando a tela home....");
         initComponents();
+        PlanoDeSaudeDAO.gravarPlanoDeSaudeTeste();
+        criarTabelaPlanosDeSaude();
     }
 
    
@@ -71,6 +75,7 @@ public class HomeFrame extends javax.swing.JFrame {
         jPanel2.add(planoDeSaude);
         planoDeSaude.setBounds(350, 90, 70, 50);
 
+        botaoEspecialidades.setBackground(new java.awt.Color(102, 153, 255));
         botaoEspecialidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/especialidades32px.png"))); // NOI18N
         botaoEspecialidades.setToolTipText("Especialidades");
         botaoEspecialidades.addActionListener(new java.awt.event.ActionListener() {
@@ -148,12 +153,13 @@ public class HomeFrame extends javax.swing.JFrame {
         jPanel1.setBounds(620, 50, 100, 5);
 
         jPanel2.add(cabecalho);
-        cabecalho.setBounds(0, 0, 870, 80);
+        cabecalho.setBounds(0, 0, 720, 80);
 
         panelPlanosDeSaude.setBackground(new java.awt.Color(51, 153, 255));
         panelPlanosDeSaude.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Planos de saúde ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
         panelPlanosDeSaude.setLayout(null);
 
+        tabelaPlanosDeSaude.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         tabelaPlanosDeSaude.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -240,4 +246,20 @@ public class HomeFrame extends javax.swing.JFrame {
     private javax.swing.JTable tabelaPlanosDeSaude;
     private javax.swing.JLabel textoTitulo;
     // End of variables declaration//GEN-END:variables
+
+    private void criarTabelaPlanosDeSaude() {
+        tabelaPlanosDeSaude.setModel(PlanoDeSaudeDAO.getTableModel());
+        //Desativar redimensionamento
+        
+        // Definir lagura de cada coluna
+        tabelaPlanosDeSaude.getColumnModel().getColumn(0).setPreferredWidth(100);
+        tabelaPlanosDeSaude.getColumnModel().getColumn(1).setPreferredWidth(225);
+        tabelaPlanosDeSaude.getColumnModel().getColumn(2).setPreferredWidth(225);
+        //impedir a movimentação das colunas
+        tabelaPlanosDeSaude.getTableHeader().setReorderingAllowed(false);
+        //impedindo digitar nos campos da tabela
+        tabelaPlanosDeSaude.setDefaultEditor(Object.class, null);
+    }
+    //desativar edição da jTable
+    
 }
