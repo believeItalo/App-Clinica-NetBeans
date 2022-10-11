@@ -46,7 +46,7 @@ public class PlanoDeSaudeDAO {
           
         }
         
-        //Método para criar a matriz que receberá os planso da saúde na tabela(Jtable)
+        //Método para criar a matriz que receberá os planos de saúde na tabela(Jtable)
         
         public static DefaultTableModel getTableModel(){
             int i = 0;
