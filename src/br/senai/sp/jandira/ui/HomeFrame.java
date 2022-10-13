@@ -48,6 +48,7 @@ public class HomeFrame extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         botaoHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/img/home32.png"))); // NOI18N
+        botaoHome.setToolTipText("Home");
         botaoHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoHomeActionPerformed(evt);

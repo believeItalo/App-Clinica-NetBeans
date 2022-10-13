@@ -45,7 +45,10 @@ public class TesteDao {
 		//a função gravar esta simulando o envio de dados a um banco de dados, no nosso caso o DAO
 		dao.gravar(plano1);
 		dao.gravar(plano2);
-
+		dao.gravar(plano3);
+		dao.gravar(plano4);
+		dao.gravar(plano5);
+                
 		for(PlanoDeSaude p : PlanoDeSaudeDAO.listar()) {
 			
 			System.out.println("Código: " + p.getCodigo());
@@ -53,6 +56,15 @@ public class TesteDao {
 			
 			
 		}
+                
+                
+                PlanoDeSaudeDAO.excluir(101);
+                System.out.println("Apos Exclusão");
+                for(PlanoDeSaude p : PlanoDeSaudeDAO.listar()) {
+			System.out.println("Código: " + p.getCodigo());
+			System.out.println("Operadora: " + p.getOperadora());
+		}
+                
 		//exemplo claro de uma classe estática, se observarmos o "for" estamos apenas invocando a primeira lista que fizemos utilizando o objeto DAO.
 		//porém, as classes do objeto tem as váraveis(os planos) no mesmo lugar, sendo assim eles compartilham o mesmo local de armazenamentos 
 		
