@@ -65,6 +65,13 @@ public class TesteDao {
 			System.out.println("Operadora: " + p.getOperadora());
 		}
                 
+                
+                //testar o metodo getPlanoDesaude Dao
+                
+                PlanoDeSaude p = PlanoDeSaudeDAO.getPlanoDeSaude(104);
+                System.out.println("Código: " + p.getCodigo());
+		System.out.println("Operadora: " + p.getOperadora());
+                System.out.println("Tipo Do Plano: " + p.gettipoDoPlano());
 		//exemplo claro de uma classe estática, se observarmos o "for" estamos apenas invocando a primeira lista que fizemos utilizando o objeto DAO.
 		//porém, as classes do objeto tem as váraveis(os planos) no mesmo lugar, sendo assim eles compartilham o mesmo local de armazenamentos 
 		
