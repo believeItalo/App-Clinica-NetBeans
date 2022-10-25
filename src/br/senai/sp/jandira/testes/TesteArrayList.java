@@ -53,31 +53,31 @@ public class TesteArrayList {
 		
 		
 		
-		Especialidade e1 = new Especialidade();
-		e1.setNome("Cardiologista");
-		e1.setDescricao("Cuida do coração");
-		Especialidade e2 = new Especialidade();
-		e2.setNome("Ortopedista");
-		e2.setDescricao("Cuida dos ossos");
-		Especialidade e3 = new Especialidade();
-		e3.setNome("Clínico Geral");
-		e3.setDescricao("Consulta em termos gerais ");
+//		Especialidade e1 = new Especialidade();
+//		e1.setNome("Cardiologista");
+//		e1.setDescricao("Cuida do coração");
+//		Especialidade e2 = new Especialidade();
+//		e2.setNome("Ortopedista");
+//		e2.setDescricao("Cuida dos ossos");
+//		Especialidade e3 = new Especialidade();
+//		e3.setNome("Clínico Geral");
+//		e3.setDescricao("Consulta em termos gerais ");
 		
 		
-		
-	ArrayList<Especialidade> especialidades = new ArrayList<>();
-	 especialidades.add(e1);
-	 especialidades.add(e2);
-	 especialidades.add(e3);
+//		
+//	ArrayList<Especialidade> especialidades = new ArrayList<>();
+//	 especialidades.add(e1);
+//	 especialidades.add(e2);
+//	 especialidades.add(e3);
+//	 
 	 
 	 
 	 
-	 
-	for(Especialidade e : especialidades) {
-		
-		System.out.println(e.getNome() + " ===> " + e.getDescricao() );
-	}
-	
+//	for(Especialidade e : especialidades) {
+//		
+//		System.out.println(e.getNome() + " ===> " + e.getDescricao() );
+//	}
+//	
 	Endereco endereco1 = new Endereco();
 	endereco1.setCidade("Osasco");
 	endereco1.setBairro("Jd Bonança");

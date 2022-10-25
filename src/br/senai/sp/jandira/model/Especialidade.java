@@ -1,38 +1,65 @@
 package br.senai.sp.jandira.model;
 
+import javax.swing.JOptionPane;
+
 public class Especialidade {
+	private static Integer contador = 100;
+        private Integer codigo;
+        private String nome;
+        private String descricao;
 
-	private  String nome; // Atributos sempre privados, eles devem ser "encapsulados"
-	private  String descricao; // a atribuição static define que os objetos compartilharao o msm atributo, eles são estáticos, todos apontam pra um única variável
-	 
-	
-	// sem o static os atributos não são compartilhados
+        // Construtores da classe
+        public Especialidade(String nome) {
+            this.nome = nome;
+            this.codigo = contador++;
+        }
 
-			// métodos de acesso getters e setters, métodos para acessar os atributos
-			// métodos sao públicos
-	
-	
-	public void setNome(String novoNome) {
-		nome = novoNome;
+        public Especialidade(String nome, String descricao) {
+            this.nome = nome;
+            this.descricao = descricao;
+            this.codigo = contador++;
+        }
 
-	}			
-	
-	
-	
-	
-	public String getNome(){
-		
-			return nome; 
-					
-					
-					// nesse caso usamos  return porque o ato do get é retornar/pegar algo 
-			
+        public Especialidade() {
+            this.codigo = contador++;
+        }
+
+        // Métodos de acesso aos atributos
+        public void setNome(String nome) {
+
+            if (nome.length() >= 3) {
+                this.nome = nome;
+            } else {
+                JOptionPane.showMessageDialog(null, nome + " não é um nome válido!\nDeve conter pelo menos 3 letras!");
+            }
+
+        }
+
+        public String getNome() {
+            return nome;
+        }
+
+        public void setDescricao(String descricao) {
+            if (descricao.length() >= 10) {
+                this.descricao = descricao;
+            } else {
+                JOptionPane.showMessageDialog(null, "A descrição deve conter pelo menos 10 caracteres!");
+            }
+        }
+
+        public String getDescricao() {
+            return this.descricao;
+        }
+
+        public Integer getCodigo() {
+            return codigo;
+        }
+
+        public void setCodigo(Integer codigo) {
+            this.codigo = codigo;
+        }
+
+
+
 
 }
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	}

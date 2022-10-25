@@ -50,17 +50,13 @@ public class PlanoDeSaudeDAO {
 
     public static void atualizar(PlanoDeSaude planoDeSaude){
     
-        for(PlanoDeSaude p : planos){
-        if(p.getCodigo().equals(planoDeSaude.getCodigo())){
-            planos.set(planos.indexOf(p), planoDeSaude);
-        break;
-        
-        
+       for (PlanoDeSaude p : planos) {
+            if (p.getCodigo().equals(planoDeSaude.getCodigo())) {
+                planos.set(planos.indexOf(p), planoDeSaude);
+                break;
+            }
+            
         }
-        
-        }
-    
-    
     }
     
     

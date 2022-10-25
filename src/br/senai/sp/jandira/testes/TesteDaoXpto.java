@@ -1,6 +1,8 @@
 package br.senai.sp.jandira.testes;
 
+
 import br.senai.sp.jandira.dao.PlanoDeSaudeDAO;
+import br.senai.sp.jandira.model.Especialidade;
 import br.senai.sp.jandira.model.PlanoDeSaude;
 
 public class TesteDaoXpto {
@@ -12,6 +14,8 @@ public class TesteDaoXpto {
 		
 		System.out.println(PlanoDeSaudeDAO.listar().size());
 
-	}
+       
+          
+        }
 
 }

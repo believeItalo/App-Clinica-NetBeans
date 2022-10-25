@@ -3,6 +3,8 @@ package br.senai.sp.jandira.ui;
 
 import br.senai.sp.jandira.dao.PlanoDeSaudeDAO;
 import javax.swing.JTable;
+import br.senai.sp.jandira.ui.EspecialidadesPanel;
+import java.util.Locale;
 
 
 public class HomeFrame extends javax.swing.JFrame {
@@ -12,8 +14,10 @@ public class HomeFrame extends javax.swing.JFrame {
     private final int POSICAO_Y = 160;
     private final int LARGURA = 660;
     private final int ALTURA = 440;
-    
    
+    
+    
+    
     public HomeFrame() {
         initComponents();
         PlanoDeSaudeDAO.gravarPlanoDeSaudeTeste();
@@ -198,7 +202,16 @@ public class HomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoAgendaActionPerformed
 
     private void botaoEspecialidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEspecialidadesActionPerformed
-        // TODO add your handling code here:
+        botaoEspecialidades.setBackground(new java.awt.Color(153,255,255));
+        botaoEspecialidades.setBackground(new java.awt.Color(255,255,255));
+        
+        panelHome.setVisible(false);
+        planosDeSaudePanel.setVisible(false);
+        
+        
+        
+        
+        
     }//GEN-LAST:event_botaoEspecialidadesActionPerformed
 
     private void botaoPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPacientesActionPerformed

@@ -120,6 +120,7 @@ public class PlanosDeSaudePanel extends javax.swing.JPanel {
 
         if (linha != -1) {
             editar();
+            
         } else {
             JOptionPane.showMessageDialog(this,
                     "Selecione um plano de saúde pra alterar",
@@ -141,6 +142,8 @@ public class PlanosDeSaudePanel extends javax.swing.JPanel {
                 TipoOperacao.ALTERAR,
                 planoDeSaude);
         planoDeSaudeJDialog.setVisible(true);
+        
+        criarTabelaPlanosDeSaude();
     }
 
     private void excluir() {
